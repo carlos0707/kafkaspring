@@ -3,6 +3,7 @@ package br.com.kafkaspring.controller;
 import br.com.kafkaspring.producer.PeopleProducer;
 import br.com.springkafka.People;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class PeopleController {
 
+    @Autowired
     private final PeopleProducer peopleProducer;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
